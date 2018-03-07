@@ -71,7 +71,7 @@ namespace ESFA.DC.Serialization.Json.Tests
             var service = NewService();
 
             var objectToSerialize = TestRoot();
-            
+
             service.Serialize(objectToSerialize).Should().Be(File.ReadAllText(@"TestData/Data.json"));
         }
 
@@ -102,7 +102,6 @@ namespace ESFA.DC.Serialization.Json.Tests
 
                 serializedString.Should().Be(File.ReadAllText(@"TestData/Data.json"));
             }
-
         }
 
         [Fact]

@@ -33,7 +33,7 @@ namespace ESFA.DC.Serialization.Xml
 
             var serializer = new XmlSerializer(typeof(T));
 
-            return (T) serializer.Deserialize(stream);
+            return (T)serializer.Deserialize(stream);
         }
 
         public string Serialize<T>(T objectToSerialize)

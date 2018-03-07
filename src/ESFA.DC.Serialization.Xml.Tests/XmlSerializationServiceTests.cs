@@ -28,7 +28,7 @@ namespace ESFA.DC.Serialization.Xml.Tests
             var service = NewService();
 
             Action action = () => service.Deserialize<Root>((string)null);
-            
+
             action.Should().Throw<ArgumentNullException>();
         }
 
@@ -49,7 +49,7 @@ namespace ESFA.DC.Serialization.Xml.Tests
             var xmlString = File.ReadAllText(@"TestData\Data.xml");
 
             var deserializedObject = service.Deserialize<Root>(GenerateStreamFromString(xmlString));
-            
+
             deserializedObject.Should().NotBeNull();
             deserializedObject.CollectionField.Should().HaveCount(3);
             deserializedObject.MandatoryStringField.Should().Be("MandatoryStringField1");
@@ -152,7 +152,7 @@ namespace ESFA.DC.Serialization.Xml.Tests
                 action.Should().Throw<ArgumentNullException>();
             }
         }
-        
+
         [Fact]
         public void SerializeToStream_StreamNull()
         {

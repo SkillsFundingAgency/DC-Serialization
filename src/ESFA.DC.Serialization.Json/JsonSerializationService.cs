@@ -58,7 +58,7 @@ namespace ESFA.DC.Serialization.Json
             var streamWriter = new StreamWriter(stream);
 
             var jsonTextWriter = new JsonTextWriter(streamWriter);
-            
+
             new JsonSerializer().Serialize(jsonTextWriter, objectToSerialize);
 
             jsonTextWriter.Flush();

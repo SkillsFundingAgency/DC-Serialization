@@ -4,6 +4,18 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet>ESFA.DC.Serialization.Xml.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet>ESFA.DC.Serialization.Xml.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="stylecop.analyzers" Version="1.0.2" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\ESFA.DC.Serialization.Interfaces\ESFA.DC.Serialization.Interfaces.csproj" />
   </ItemGroup>
