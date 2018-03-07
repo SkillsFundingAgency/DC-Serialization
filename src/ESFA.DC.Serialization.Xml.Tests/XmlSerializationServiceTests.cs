@@ -25,15 +25,11 @@ namespace ESFA.DC.Serialization.Xml.Tests
         [Fact]
         public void DeserializeFromString_Null()
         {
-            string xmlString = File.ReadAllText(@"TestData\Data.xml");
-
             var service = NewService();
 
-            var deserializedObject = service.Deserialize<Root>(xmlString);
-
-            deserializedObject.Should().NotBeNull();
-            deserializedObject.CollectionField.Should().HaveCount(3);
-            deserializedObject.MandatoryStringField.Should().Be("MandatoryStringField1");
+            Action action = () => service.Deserialize<Root>((string)null);
+            
+            action.Should().Throw<ArgumentNullException>();
         }
 
         [Fact]
@@ -50,7 +46,20 @@ namespace ESFA.DC.Serialization.Xml.Tests
         public void DeserializeFromStream()
         {
             var service = NewService();
-                
+            var xmlString = File.ReadAllText(@"TestData\Data.xml");
+
+            var deserializedObject = service.Deserialize<Root>(GenerateStreamFromString(xmlString));
+            
+            deserializedObject.Should().NotBeNull();
+            deserializedObject.CollectionField.Should().HaveCount(3);
+            deserializedObject.MandatoryStringField.Should().Be("MandatoryStringField1");
+        }
+
+        [Fact]
+        public void DeserializeFromStream_Null()
+        {
+            var service = NewService();
+
             Action action = () => service.Deserialize<Root>((Stream)null);
 
             action.Should().Throw<ArgumentNullException>();
@@ -81,6 +90,16 @@ namespace ESFA.DC.Serialization.Xml.Tests
             };
 
             service.Serialize(objectToSerialize).Should().Be(File.ReadAllText(@"TestData/SerializedDataEncoding.xml"));
+        }
+
+        [Fact]
+        public void SerializeToString_Null()
+        {
+            var service = NewService();
+
+            Action action = () => service.Serialize<Root>(null);
+
+            action.Should().Throw<ArgumentNullException>();
         }
 
         [Fact]
@@ -120,7 +139,31 @@ namespace ESFA.DC.Serialization.Xml.Tests
 
             serializedString.Should().Be(File.ReadAllText(@"TestData/SerializedData.xml"));
         }
+
+        [Fact]
+        public void SerializeToStream_ObjectToSerializeNull()
+        {
+            var service = NewService();
+
+            using (var stream = new MemoryStream())
+            {
+                Action action = () => service.Serialize<Root>(null, stream);
+
+                action.Should().Throw<ArgumentNullException>();
+            }
+        }
         
+        [Fact]
+        public void SerializeToStream_StreamNull()
+        {
+            var service = NewService();
+
+            var objectToSerialize = new Root();
+
+            Action action = () => service.Serialize(objectToSerialize, null);
+
+            action.Should().Throw<ArgumentNullException>();
+        }
 
         private XmlSerializationService NewService()
         {

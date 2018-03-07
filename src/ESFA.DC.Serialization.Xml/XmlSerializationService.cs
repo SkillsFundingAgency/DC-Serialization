@@ -38,6 +38,11 @@ namespace ESFA.DC.Serialization.Xml
 
         public string Serialize<T>(T objectToSerialize)
         {
+            if (objectToSerialize == null)
+            {
+                throw new ArgumentNullException("Object To Serialize must not be Null.");
+            }
+
             var serializer = new XmlSerializer(objectToSerialize.GetType());
 
             using (var writer = new StringWriter())
@@ -49,6 +54,16 @@ namespace ESFA.DC.Serialization.Xml
 
         public void Serialize<T>(T objectToSerialize, Stream stream)
         {
+            if (objectToSerialize == null)
+            {
+                throw new ArgumentNullException("Object To Serialize must not be Null.");
+            }
+
+            if (stream == null)
+            {
+                throw new ArgumentNullException("Stream must be initialized.");
+            }
+
             var serializer = new XmlSerializer(objectToSerialize.GetType());
 
             serializer.Serialize(stream, objectToSerialize);
