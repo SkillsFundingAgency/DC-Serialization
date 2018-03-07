@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <Authors>DC</Authors>
+    <Company>ESFA</Company>
+    <PackageLicenseUrl>https://github.com/SkillsFundingAgency/DC-Serialization/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/SkillsFundingAgency/DC-Serialization</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SkillsFundingAgency/DC-Serialization</RepositoryUrl>
+    <Description>DC Xml Serialization Library.</Description>
+    <Copyright>Copyright 2018</Copyright>
+    <PackageTags>Serialization Xml Data Database Model</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
