@@ -1,0 +1,1 @@
+{"StringField":null,"ComplexField":{"StringField":"Three","IntegerField":"Two"},"CollectionField":[{"StringField":"Five","OptionalStringField":null,"PositiveIntegerField":"Four","DecimalField":1.0}],"MandatoryStringField":"One"}
