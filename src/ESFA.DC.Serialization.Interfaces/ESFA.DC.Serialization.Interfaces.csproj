@@ -12,6 +12,7 @@
     <Copyright>Copyright 2018</Copyright>
     <PackageReleaseNotes />
     <PackageTags>Serialization Data Database Model</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
