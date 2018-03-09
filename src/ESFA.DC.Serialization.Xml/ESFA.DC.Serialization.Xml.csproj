@@ -11,6 +11,7 @@
     <Description>DC Xml Serialization Library.</Description>
     <Copyright>Copyright 2018</Copyright>
     <PackageTags>Serialization Xml Data Database Model</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -22,11 +23,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ESFA.DC.Serialization.Interfaces" Version="0.1.0-beta0001" />
     <PackageReference Include="stylecop.analyzers" Version="1.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ESFA.DC.Serialization.Interfaces\ESFA.DC.Serialization.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>
