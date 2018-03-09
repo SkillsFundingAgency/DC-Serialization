@@ -85,6 +85,10 @@
     <Analyzer Include="..\packages\xunit.analyzers.0.7.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ESFA.DC.Serialization.Interfaces\ESFA.DC.Serialization.Interfaces.csproj">
+      <Project>{4b45a073-a92d-429d-b123-6bb764b3bf83}</Project>
+      <Name>ESFA.DC.Serialization.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ESFA.DC.Serialization.Json\ESFA.DC.Serialization.Json.csproj">
       <Project>{ff13b691-2ab6-4950-bf96-4eda4081cd53}</Project>
       <Name>ESFA.DC.Serialization.Json</Name>
