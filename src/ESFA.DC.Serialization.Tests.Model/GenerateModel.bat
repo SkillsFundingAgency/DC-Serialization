@@ -1,0 +1,1 @@
+xsd SerializationTestsModel.xsd /classes /namespace:"ESFA.DC.Serialization.Tests.Model"
