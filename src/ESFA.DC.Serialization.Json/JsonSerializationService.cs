@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace ESFA.DC.Serialization.Json
 {
-    public class JsonSerializationService : ISerializationService
+    public class JsonSerializationService : IJsonSerializationService, ISerializationService
     {
         private readonly JsonSerializerSettings _jsonSerializerSettings;
 
