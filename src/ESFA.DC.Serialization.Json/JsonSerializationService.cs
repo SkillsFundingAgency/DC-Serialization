@@ -24,6 +24,8 @@ namespace ESFA.DC.Serialization.Json
                 throw new ArgumentNullException("Stream must be initialized.");
             }
 
+            stream.Seek(0, SeekOrigin.Begin);
+
             using (var streamReader = new StreamReader(stream))
             {
                 using (var jsonTextReader = new JsonTextReader(streamReader))
@@ -54,6 +56,8 @@ namespace ESFA.DC.Serialization.Json
             {
                 throw new ArgumentNullException("Stream must be initialized.");
             }
+
+            stream.Seek(0, SeekOrigin.Begin);
 
             var streamWriter = new StreamWriter(stream);
 

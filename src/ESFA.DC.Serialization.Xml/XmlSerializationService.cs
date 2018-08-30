@@ -31,6 +31,8 @@ namespace ESFA.DC.Serialization.Xml
                 throw new ArgumentNullException("Stream must be initialized.");
             }
 
+            stream.Seek(0, SeekOrigin.Begin);
+
             var serializer = new XmlSerializer(typeof(T));
 
             return (T)serializer.Deserialize(stream);
@@ -63,6 +65,8 @@ namespace ESFA.DC.Serialization.Xml
             {
                 throw new ArgumentNullException("Stream must be initialized.");
             }
+
+            stream.Seek(0, SeekOrigin.Begin);
 
             var serializer = new XmlSerializer(objectToSerialize.GetType());
 
