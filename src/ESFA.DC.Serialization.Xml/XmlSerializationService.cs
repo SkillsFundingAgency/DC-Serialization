@@ -1,13 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.Text;
-using System.Xml;
 using System.Xml.Serialization;
 using ESFA.DC.Serialization.Interfaces;
 
 namespace ESFA.DC.Serialization.Xml
 {
-    public class XmlSerializationService : ISerializationService
+    public class XmlSerializationService : IXmlSerializationService, ISerializationService
     {
         public T Deserialize<T>(string serializedObject)
         {
