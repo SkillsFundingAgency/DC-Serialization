@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root MandatoryStringField="MandatoryStringField1" xmlns="http://tempuri.org/SerializationTestsModel.xsd">
+  <StringField>StringField1</StringField>
+  <ComplexField>
+    <StringField>StringField1</StringField>
+    <IntegerField>1</IntegerField>
+  </ComplexField>
+  <CollectionField>
+    <StringField>StringField1</StringField>
+    <OptionalStringField>OptionalStringField1</OptionalStringField>
+    <PositiveIntegerField>1</PositiveIntegerField>
+    <DecimalField>1</DecimalField>
+  </CollectionField>
+  <CollectionField>
+    <StringField>StringField2</StringField>
+    <OptionalStringField>OptionalStringField2</OptionalStringField>
+    <PositiveIntegerField>79228162514264337593543950335</PositiveIntegerField>
+    <DecimalField>-79228162514264337593543950335</DecimalField>
+  </CollectionField>
+  <CollectionField>
+    <StringField>StringField3</StringField>
+    <OptionalStringField>OptionalStringField3</OptionalStringField>
+    <PositiveIntegerField>2</PositiveIntegerField>
+    <DecimalField>79228162514264337593543950335</DecimalField>
+  </CollectionField>
+</Root>

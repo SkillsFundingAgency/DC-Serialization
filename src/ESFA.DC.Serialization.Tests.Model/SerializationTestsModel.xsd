@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SerializationTestsModel"
+    targetNamespace="http://tempuri.org/SerializationTestsModel.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/SerializationTestsModel.xsd"
+    xmlns:mstns="http://tempuri.org/SerializationTestsModel.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="Root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="StringField" type="xs:string"/>
+        <xs:element name="ComplexField">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StringField" type="xs:string"/>
+              <xs:element name="IntegerField" type="xs:integer"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CollectionField" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StringField" type="xs:string"/>
+              <xs:element name="OptionalStringField" type="xs:string" minOccurs="0"/>
+              <xs:element name="PositiveIntegerField" type="xs:positiveInteger"/>
+              <xs:element name="DecimalField" type="xs:decimal"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="MandatoryStringField" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

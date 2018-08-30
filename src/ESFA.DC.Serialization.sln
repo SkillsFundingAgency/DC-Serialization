@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESFA.DC.Serialization.Interfaces", "ESFA.DC.Serialization.Interfaces\ESFA.DC.Serialization.Interfaces.csproj", "{4B45A073-A92D-429D-B123-6BB764B3BF83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESFA.DC.Serialization.Xml", "ESFA.DC.Serialization.Xml\ESFA.DC.Serialization.Xml.csproj", "{3DCDF5FB-CFB0-4520-BE2F-1CD1E1ACC107}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESFA.DC.Serialization.Tests.Model", "ESFA.DC.Serialization.Tests.Model\ESFA.DC.Serialization.Tests.Model.csproj", "{5C9B3828-BA1B-4A0B-ACBE-C54B455FA8F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.Serialization.Xml.Tests", "ESFA.DC.Serialization.Xml.Tests\ESFA.DC.Serialization.Xml.Tests.csproj", "{D0D8099A-901B-42A5-9F3A-CE55C0549A77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.Serialization.Json", "ESFA.DC.Serialization.Json\ESFA.DC.Serialization.Json.csproj", "{FF13B691-2AB6-4950-BF96-4EDA4081CD53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESFA.DC.Serialization.Json.Tests", "ESFA.DC.Serialization.Json.Tests\ESFA.DC.Serialization.Json.Tests.csproj", "{538A51D4-FEA8-43FC-BA8D-B4DA31358926}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B45A073-A92D-429D-B123-6BB764B3BF83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B45A073-A92D-429D-B123-6BB764B3BF83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B45A073-A92D-429D-B123-6BB764B3BF83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B45A073-A92D-429D-B123-6BB764B3BF83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DCDF5FB-CFB0-4520-BE2F-1CD1E1ACC107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DCDF5FB-CFB0-4520-BE2F-1CD1E1ACC107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DCDF5FB-CFB0-4520-BE2F-1CD1E1ACC107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DCDF5FB-CFB0-4520-BE2F-1CD1E1ACC107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C9B3828-BA1B-4A0B-ACBE-C54B455FA8F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C9B3828-BA1B-4A0B-ACBE-C54B455FA8F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C9B3828-BA1B-4A0B-ACBE-C54B455FA8F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C9B3828-BA1B-4A0B-ACBE-C54B455FA8F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D8099A-901B-42A5-9F3A-CE55C0549A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D8099A-901B-42A5-9F3A-CE55C0549A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D8099A-901B-42A5-9F3A-CE55C0549A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D8099A-901B-42A5-9F3A-CE55C0549A77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF13B691-2AB6-4950-BF96-4EDA4081CD53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF13B691-2AB6-4950-BF96-4EDA4081CD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF13B691-2AB6-4950-BF96-4EDA4081CD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF13B691-2AB6-4950-BF96-4EDA4081CD53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{538A51D4-FEA8-43FC-BA8D-B4DA31358926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{538A51D4-FEA8-43FC-BA8D-B4DA31358926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{538A51D4-FEA8-43FC-BA8D-B4DA31358926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{538A51D4-FEA8-43FC-BA8D-B4DA31358926}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B207DBD-8B6C-456B-87F3-962C9B0CE10D}
+	EndGlobalSection
+EndGlobal
