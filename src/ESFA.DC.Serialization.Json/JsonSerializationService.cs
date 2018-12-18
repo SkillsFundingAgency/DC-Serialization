@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using ESFA.DC.Serialization.Interfaces;
 using Newtonsoft.Json;
 
@@ -9,12 +10,20 @@ namespace ESFA.DC.Serialization.Json
     {
         private readonly JsonSerializerSettings _jsonSerializerSettings;
 
+        private readonly Encoding _utf8WithoutBom;
+
+        private readonly object _locker;
+
+        private JsonSerializer _jsonSerialiser;
+
         public JsonSerializationService()
         {
             _jsonSerializerSettings = new JsonSerializerSettings()
             {
                 TypeNameHandling = TypeNameHandling.Auto
             };
+            _utf8WithoutBom = new UTF8Encoding(false);
+            _locker = new object();
         }
 
         public T Deserialize<T>(string serializedObject)
@@ -36,11 +45,11 @@ namespace ESFA.DC.Serialization.Json
 
             stream.Seek(0, SeekOrigin.Begin);
 
-            using (var streamReader = new StreamReader(stream))
+            using (StreamReader streamReader = new StreamReader(stream))
             {
-                using (var jsonTextReader = new JsonTextReader(streamReader))
+                using (JsonTextReader jsonTextReader = new JsonTextReader(streamReader))
                 {
-                    return new JsonSerializer().Deserialize<T>(jsonTextReader);
+                    return GetJsonSerialiser().Deserialize<T>(jsonTextReader);
                 }
             }
         }
@@ -69,13 +78,28 @@ namespace ESFA.DC.Serialization.Json
 
             stream.Seek(0, SeekOrigin.Begin);
 
-            var streamWriter = new StreamWriter(stream);
+            using (StreamWriter streamWriter = new StreamWriter(stream, _utf8WithoutBom, 1024, true))
+            {
+                using (JsonTextWriter jsonTextWriter = new JsonTextWriter(streamWriter))
+                {
+                    GetJsonSerialiser().Serialize(jsonTextWriter, objectToSerialize);
+                }
+            }
 
-            var jsonTextWriter = new JsonTextWriter(streamWriter);
+            stream.Seek(0, SeekOrigin.Begin);
+        }
 
-            new JsonSerializer().Serialize(jsonTextWriter, objectToSerialize);
+        private JsonSerializer GetJsonSerialiser()
+        {
+            lock (_locker)
+            {
+                if (_jsonSerialiser == null)
+                {
+                    _jsonSerialiser = JsonSerializer.Create(_jsonSerializerSettings);
+                }
+            }
 
-            jsonTextWriter.Flush();
+            return _jsonSerialiser;
         }
     }
 }
