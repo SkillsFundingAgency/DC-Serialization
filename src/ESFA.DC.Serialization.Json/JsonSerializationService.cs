@@ -43,7 +43,10 @@ namespace ESFA.DC.Serialization.Json
                 throw new ArgumentNullException("Stream must be initialized.");
             }
 
-            stream.Seek(0, SeekOrigin.Begin);
+            if (stream.CanSeek)
+            {
+                stream.Seek(0, SeekOrigin.Begin);
+            }
 
             using (StreamReader streamReader = new StreamReader(stream))
             {
@@ -76,7 +79,10 @@ namespace ESFA.DC.Serialization.Json
                 throw new ArgumentNullException("Stream must be initialized.");
             }
 
-            stream.Seek(0, SeekOrigin.Begin);
+            if (stream.CanSeek)
+            {
+                stream.Seek(0, SeekOrigin.Begin);
+            }
 
             using (StreamWriter streamWriter = new StreamWriter(stream, _utf8WithoutBom, 1024, true))
             {
@@ -86,7 +92,10 @@ namespace ESFA.DC.Serialization.Json
                 }
             }
 
-            stream.Seek(0, SeekOrigin.Begin);
+            if (stream.CanSeek)
+            {
+                stream.Seek(0, SeekOrigin.Begin);
+            }
         }
 
         private JsonSerializer GetJsonSerialiser()

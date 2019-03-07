@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net.Http;
 using System.Xml.Serialization;
 using ESFA.DC.Serialization.Interfaces;
 
@@ -29,7 +30,10 @@ namespace ESFA.DC.Serialization.Xml
                 throw new ArgumentNullException("Stream must be initialized.");
             }
 
-            stream.Seek(0, SeekOrigin.Begin);
+            if (stream.CanSeek)
+            {
+                stream.Seek(0, SeekOrigin.Begin);
+            }
 
             var serializer = new XmlSerializer(typeof(T));
 
@@ -64,7 +68,10 @@ namespace ESFA.DC.Serialization.Xml
                 throw new ArgumentNullException("Stream must be initialized.");
             }
 
-            stream.Seek(0, SeekOrigin.Begin);
+            if (stream.CanSeek)
+            {
+                stream.Seek(0, SeekOrigin.Begin);
+            }
 
             var serializer = new XmlSerializer(objectToSerialize.GetType());
 
